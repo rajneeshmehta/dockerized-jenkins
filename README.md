@@ -37,3 +37,11 @@ then
 	sudo docker run -d --name html-server -p 8081:80 -v /tmp/MlOps-Task-2/:/usr/local/apache2/htdocs/ httpd
 fi
 ```
+we can confirm this from running `docker container ps -a` command.
+```
+[root@localhost ~]# docker container ps -a
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                     PORTS                  NAMES
+20127f4e0827        httpd               "httpd-foreground"   15 hours ago        Exited (255) 2 hours ago   0.0.0.0:8081->80/tcp   html-server
+[root@localhost ~]# 
+```
+
