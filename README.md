@@ -44,4 +44,33 @@ CONTAINER ID        IMAGE               COMMAND              CREATED            
 20127f4e0827        httpd               "httpd-foreground"   15 hours ago        Exited (255) 2 hours ago   0.0.0.0:8081->80/tcp   html-server
 [root@localhost ~]# 
 ```
+## Step 3:
+check the app status from concept of exit code in case of html.
 
+<img src="Gif's/Test-the-App.gif" alt="Run-The-Container" width="600" height="400">
+
+We've used this code for the same
+
+```Shell
+if sudo ls /tmp/MlOps-Task-2 | grep .html
+then
+	html_status = $( curl -o /dev/null -s -w "%{http_code}" ttp://192.168.43.61:8081/index.html)
+fi
+
+
+if $html_status=="200"
+then
+	exit 1
+else
+	exit 0
+fi
+
+
+if sudo docker ps -af status=exited -f name=python
+then
+	exit 0
+fi
+```
+> It'll also inform the developer if job failed indicating any app not running well.
+
+## Step 4:
