@@ -71,6 +71,28 @@ then
 	exit 0
 fi
 ```
-> It'll also inform the developer if job failed indicating any app not running well.
+> #### It'll also inform the developer if job failed indicating any app not running well.
 
 ## Step 4:
+If any Container fails duet to any reasons we'll restart the container.
+
+<img src="/Gif's/restart-Container.gif" alt="Restart-The-Container" width="600" height="400" >
+
+We've used this code for the same
+```Shell
+if sudo docker container ps -af name=python -f status=exited 
+then 
+	sudo docker container start python
+fi
+
+if sudo docker container ps -af name=html-server -f status=exited 
+then 
+	sudo docker container start html-server
+fi
+
+```
+## Step 5:
+Now we'll create a Build Pipeline view.
+
+<img src="/Gif's/Build-Pipeline.gif" alt="Build-Pipeline" width="600" height="400">
+
