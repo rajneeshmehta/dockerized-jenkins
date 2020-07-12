@@ -5,4 +5,4 @@ How it Works?
 download the code whenever developer pushes the code into the repository.
 and copy it to `/tmp/MlOps-Task-2` folder.
 
-<img src="../blob/master/Gif's\Get-The-Code.gif" alt="alt text" width="400" height="300">
+<img src="/Gif's/Get-The-Code.gif" alt="Get-The-Code" width="400" height="300">
